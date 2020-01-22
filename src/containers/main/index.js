@@ -1,4 +1,4 @@
-import Main from "./maint";
+import Main from "./main";
 
 
 export {
