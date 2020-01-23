@@ -36,7 +36,7 @@
   &__item
     display: flex
     align-items: center
-  
+    
   &__link
     display: block
     padding: 40px 16px
@@ -48,11 +48,7 @@
     color: $white
     border-top: 3px solid transparent
     transition: all .5s linear
-    
-    &:hover,
-    &--active
-      border-top: 3px solid $greyMiddle
-  
+
   &__button
     align-self: center
     margin: 7px
@@ -66,3 +62,9 @@
     width: 21px
     height: 21px
     
+  &__line
+    position: absolute
+    width: 90px
+    height: 3px
+    background: #fff
+    transition: all .33s linear
