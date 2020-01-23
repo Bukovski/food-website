@@ -1,0 +1,68 @@
+.main-menu
+  position: fixed
+  top: 0
+  margin: 0 auto
+  width: 100%
+  background: linear-gradient(to bottom, rgba(2,0,36,.6), rgba(255,255,255,0))
+  z-index: 100
+  
+  &__wrap
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+  
+  &__logo-link
+    display: inline-block
+  
+  &__logo-img
+    @extend %img-responsive
+  
+  
+  &__menu
+    display: flex
+  
+  &__list
+    display: flex
+    justify-content: space-between
+    
+    max-width: 100%
+    margin: 0
+    margin-right: 10px
+    padding: 0
+    font-family: $yeseva-font
+    list-style-type: none
+  
+  &__item
+    display: flex
+    align-items: center
+  
+  &__link
+    display: block
+    padding: 40px 16px
+    border-top: 2px solid transparent
+    font-size: 18px
+    font-weight: 400
+    text-decoration: none
+    white-space: nowrap
+    color: $white
+    border-top: 3px solid transparent
+    transition: all .5s linear
+    
+    &:hover,
+    &--active
+      border-top: 3px solid $greyMiddle
+  
+  &__button
+    align-self: center
+    margin: 7px
+    fill: $brownLight
+    transition: all .5s linear
+    
+    &:hover
+      fill: $yellow
+  
+  &__icon
+    width: 21px
+    height: 21px
+    
