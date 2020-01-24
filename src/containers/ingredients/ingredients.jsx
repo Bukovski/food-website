@@ -2,6 +2,7 @@ import React from "react";
 import { DividerWhite } from "../../components/static";
 import Ingredient from "../../resources/images/ingradients.png"
 
+
 export default function Ingredients() {
   return (
     <section className="ingredients">

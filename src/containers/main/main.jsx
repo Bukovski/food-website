@@ -4,6 +4,7 @@ import { MainMenu } from "../../components/menu";
 import { Present } from "../present";
 import { About } from "../about";
 import { Ingredients } from "../ingredients";
+import { Menu } from "../menu";
 
 
 class Main extends Component {
@@ -33,6 +34,8 @@ class Main extends Component {
         <About />
   
         <Ingredients />
+  
+        <Menu />
 
       </React.Fragment>
     );

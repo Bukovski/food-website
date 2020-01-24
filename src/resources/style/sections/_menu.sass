@@ -1,0 +1,74 @@
+.menu
+  background: linear-gradient(to bottom right, rgba(2,0,36,.1), rgba(255,255,255,0)),url("../../images/pattern-menu.jpg") repeat
+  
+  &__wrap
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    flex-wrap: wrap
+    margin: 70px 0 30px
+    
+  &__order
+    width: 431px
+    margin: 18px 0
+    text-align: center
+    
+  &__title
+    margin: 5px
+    font-family: $yeseva-font
+    font-size: 36px
+    font-weight: 400
+    color: $brownDark
+    
+  &__list
+    margin-top: 8px
+    padding: 0
+    list-style: none
+    
+  &__item
+  
+
+.food
+  position: relative
+  margin-top: 10px
+  padding: 0 8px
+  
+  &--special
+    margin-top: 25px
+    border: 1px solid $brownMiddle
+    
+    &:before
+      content: "Special"
+      display: inline-block
+      position: absolute
+      right: -1px
+      top: -24px
+      padding: 0 13px
+      font-size: 14px
+      background: $brownMiddle
+      color: $white
+  
+  &__head
+    display: flex
+    justify-content: space-between
+    align-items: baseline
+    
+    border-bottom: 1px solid $brownMiddle
+    font-family: $yeseva-font
+    font-size: 19px
+    color: $brownMiddle
+    
+  &__name
+    margin: 4px 0
+    
+  &__const
+  &__money
+  
+  &__text
+    margin-top: 10px
+    text-align: left
+    font-size: 16px
+    font-weight: 400
+    line-height: 24px
+    color: $blackLight
+  
