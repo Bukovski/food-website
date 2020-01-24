@@ -5,11 +5,41 @@ import Logo from "../../resources/images/label.png";
 
 
 class MainMenu extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      prevScrollPos: window.pageYOffset,
+      visible: true
+    };
+  }
+  
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+  
+  // Hide or show the menu.
+  handleScroll = () => {
+    const { prevScrollPos } = this.state;
+    
+    const currentScrollPos = window.pageYOffset;
+    const visible = prevScrollPos > currentScrollPos;
+    
+    this.setState({
+      prevScrollPos: currentScrollPos,
+      visible
+    });
+  };
+  
   render() {
-    // const { notes } = this.props;
+    const { visible } = this.state;
     
     return(
-      <div className="main-menu">
+      <div className={ "main-menu " + ((!visible) ? "main-menu--hidden" : "") }>
         <div className="container">
           <div className="main-menu__wrap">
             <a className="main-menu__logo-link" href="#">
@@ -43,9 +73,6 @@ class MainMenu extends Component {
   }
 }
 
-MainMenu.defaultProps = {
-  //notes: []
-};
 
 MainMenu.propTypes = {
   //notes: PropTypes.array.isRequired,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MenuItem from "./menu-item";
 import { bigFirstLetter } from "../../helpers";
+import PropTypes from "prop-types";
 
 
 class MenuList extends Component {
@@ -16,7 +17,7 @@ class MenuList extends Component {
         { name: "reviews", active: false },
         { name: "reservations", active: false }
       ],
-      activeLink: { id: 2, width: 0, left: 0 }
+      activeLink: { id: 1, width: 0, left: 0 }
     };
     
     this._line = React.createRef();
@@ -24,20 +25,26 @@ class MenuList extends Component {
   
   componentDidMount() {
     // only when all page loaded I take style parameters
-    window.addEventListener('load', () => {
-      const { offsetLeft, offsetWidth } = document.getElementsByClassName("main-menu__item--active")[ 0 ];
-      const { id } = this.state.activeLink;
-      
-      this.setState({
-        activeLink: {
-          id,
-          width: offsetWidth,
-          left: offsetLeft
-        }
-      });
-    })
+    window.addEventListener('load', this.handleLoadData)
   }
   
+  componentWillUnmount() {
+    window.removeEventListener("load", this.handleLoadData);
+  }
+  
+  
+  handleLoadData = () => {
+    const { offsetLeft, offsetWidth } = document.getElementsByClassName("main-menu__item--active")[ 0 ];
+    const { id } = this.state.activeLink;
+  
+    this.setState({
+      activeLink: {
+        id,
+        width: offsetWidth,
+        left: offsetLeft
+      }
+    });
+  };
   
   handleClick = (index) => (event) => {
     const { offsetLeft, offsetWidth } = event.target;
@@ -86,7 +93,6 @@ class MenuList extends Component {
   }
   
   render() {
-    // const { notes } = this.props;
     const { left, width } = this.state.activeLink;
   
     return(
@@ -105,6 +111,11 @@ class MenuList extends Component {
     );
   }
 }
+
+
+MenuList.propTypes = {
+  // text: PropTypes.string.isRequired,
+};
 
 
 export default MenuList;
