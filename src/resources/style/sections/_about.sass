@@ -1,0 +1,48 @@
+.about
+  height: 710px
+  background: linear-gradient(to left, rgba(2,0,36,.1), rgba(255,255,255,0)), url("../../images/pattern-about.jpg") repeat
+  
+  &__wrap
+    display: flex
+    justify-content: space-between
+    margin: 65px 40px
+    width: 100%
+    
+  &__description
+    text-align: center
+    max-width: 420px
+    width: 100%
+    
+  &__title
+    height: 35px
+    color: $brownDark
+    font-family: $yeseva-font
+    font-size: 33px
+    font-weight: 400
+  
+  &__text
+    margin-top: 22px
+    height: 111px
+    line-height: 1.5
+    color: $blackLight
+    font-size: 16px
+    font-weight: 400
+    
+  &__img-wrap
+    display: flex
+    align-items: flex-end
+    justify-content: center
+    width: 100%
+    height: 257px
+    
+  &__img
+    display: inline-block
+    padding-left: 75px
+  
+  &__pictures-wrap
+    display: flex
+    justify-content: center
+    flex: 60% 1 1
+    
+  &__pictures
+    @extend %img-responsive

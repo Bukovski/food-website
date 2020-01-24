@@ -16,9 +16,23 @@ body
 	background: $blackDark
 
 
-	
-	
-	
+
+.divider
+	&--bg
+		display: inline-block
+		width: 232px
+		height: 43px
+		background-color: $white
+		background: url("../images/divider/divider-big.png")
+		
+	&--brown
+		display: inline-block
+		width: 247px
+		height: 24px
+		background-color: $brownLight
+		background: url("../images/divider/divider-yellow.png")
+
+
 .container
 	display: flex
 	flex-direction: column
@@ -33,9 +47,11 @@ body
 .head
 	position: relative
 	width: 100%
-	
+
 @import "sections/main-menu"
 @import "sections/present"
+
+@import "sections/about"
 
 
 

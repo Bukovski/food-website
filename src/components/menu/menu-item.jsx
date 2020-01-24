@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 
 function MenuItem({ text, active, index, handleClick, handleMouseOver }) {
-  console.log("--> MenuItem")
-  
   return <li
     className={ `main-menu__item ${
       active ? "main-menu__item--active" : ""

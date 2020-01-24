@@ -1,6 +1,9 @@
 import Svg from "./svg";
-
+import DividerBg from "./divider-bg";
+import DividerBrown from "./divider-brown";
 
 export {
-  Svg
+  Svg,
+  DividerBg,
+  DividerBrown
 }
