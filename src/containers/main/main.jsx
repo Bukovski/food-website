@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Svg } from "../../components/static";
 import { MainMenu } from "../../components/menu";
 import { Present } from "../present";
 import { About } from "../about";
+import { Ingredients } from "../ingredients";
 
 
 class Main extends Component {
@@ -29,19 +29,15 @@ class Main extends Component {
           <Present />
         {/* present */}
         </header>
+        
         <About />
+  
+        <Ingredients />
 
       </React.Fragment>
     );
   }
 }
 
-Main.defaultProps = {
-  //notes: []
-};
-
-Main.propTypes = {
-  //notes: PropTypes.array.isRequired,
-};
 
 export default Main;

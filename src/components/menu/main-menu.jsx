@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import MenuList from "./menu-list";
 import Logo from "../../resources/images/label.png";
 
 
-class MainMenu extends Component {
+class MainMenu extends PureComponent {
   constructor(props) {
     super(props);
     
     this.state = {
-      prevScrollPos: window.pageYOffset,
       visible: true
     };
+    
+    this.prevScrollPos = window.pageYOffset;
   }
   
   componentDidMount() {
@@ -24,13 +25,12 @@ class MainMenu extends Component {
   
   // Hide or show the menu.
   handleScroll = () => {
-    const { prevScrollPos } = this.state;
-    
     const currentScrollPos = window.pageYOffset;
-    const visible = prevScrollPos > currentScrollPos;
+    const visible = this.prevScrollPos > currentScrollPos;
+  
+    this.prevScrollPos = currentScrollPos;
     
     this.setState({
-      prevScrollPos: currentScrollPos,
       visible
     });
   };
