@@ -1,0 +1,67 @@
+.review
+  padding: 100px 0
+  background: url("../../images/bg/bg-reviews.jpg") no-repeat $blackDark center
+  background-size: cover
+  
+  &__wrap
+    display: flex
+    justify-content: center
+    position: relative
+    margin: 0 auto
+    padding-top: 58px
+    width: 770px
+    height: 498px
+  
+    &:before
+      content: ""
+      display: inline-block
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: $blackDark
+      opacity: .7
+      z-index: 1
+    
+  &__content
+    display: inline-block
+    width: 100%
+    height: 100%
+    text-align: center
+    color: $white
+    z-index: 2
+    
+  &__title
+    margin: 6px auto
+    font-family: $yeseva-font
+    font-size: 36px
+    font-weight: 400
+    color: $white
+  
+  &__blockquote
+    position: relative
+    width: 622px
+    height: 267px
+    margin: 0 auto
+    
+  &__quote
+    position: absolute
+    top: -7px
+    left: -177px
+    height: 30px
+    fill: $greyDark
+    
+  &__text
+    width: 625px
+    height: 235px
+    margin: 10px 0 18px
+    font-family: $gentium-font
+    font-size: 25px
+    font-weight: 700
+    line-height: 45px
+    color: $greyLight
+    
+  &__footer
+    font-size: 18px
+    font-weight: 400

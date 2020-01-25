@@ -5,6 +5,7 @@ import { Present } from "../present";
 import { About } from "../about";
 import { Ingredients } from "../ingredients";
 import { Menu } from "../menu";
+import { Review } from "../review";
 
 
 class Main extends Component {
@@ -36,6 +37,8 @@ class Main extends Component {
         <Ingredients />
   
         <Menu />
+  
+        <Review />
 
       </React.Fragment>
     );
