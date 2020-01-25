@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Svg } from "../../components/static";
-import { MainMenu } from "../../components/menu";
+import { MainMenu } from "../../components/main-menu";
 import { Present } from "../present";
 import { About } from "../about";
 import { Ingredients } from "../ingredients";
