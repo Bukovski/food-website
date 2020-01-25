@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Svg } from "../../components/static";
-import { MainMenu } from "../../components/main-menu";
+import { NavigateMenu } from "../../components/navigate-menu";
 import { Present } from "../present";
 import { About } from "../about";
 import { Ingredients } from "../ingredients";
@@ -25,7 +25,7 @@ class Main extends Component {
         <Svg />
         
         <header className="head">
-          <MainMenu />
+          <NavigateMenu />
           {/*  main-menu */}
           <Present />
         {/* present */}

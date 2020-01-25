@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import MenuList from "./menu-list";
+import NavigateList from "./navigate-list";
 import Logo from "../../resources/images/label.png";
 
 
-class MainMenu extends PureComponent {
+class NavigateMenu extends PureComponent {
   constructor(props) {
     super(props);
     
@@ -47,7 +46,7 @@ class MainMenu extends PureComponent {
             </a>
             {/* main-menu__logo-img */}
             <nav className="main-menu__menu">
-              <MenuList />
+              <NavigateList />
               
               <a className="main-menu__button" href="#">
                 <svg className="main-menu__icon">
@@ -74,9 +73,4 @@ class MainMenu extends PureComponent {
 }
 
 
-MainMenu.propTypes = {
-  //notes: PropTypes.array.isRequired,
-};
-
-
-export default MainMenu;
+export default NavigateMenu;

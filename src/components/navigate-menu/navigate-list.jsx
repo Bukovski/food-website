@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import MenuItem from "./menu-item";
+import NavigateItem from "./navigate-item";
 import { bigFirstLetter } from "../../helpers";
-import PropTypes from "prop-types";
 
 
-class MenuList extends Component {
+class NavigateList extends Component {
   constructor() {
     super();
     
@@ -81,7 +80,7 @@ class MenuList extends Component {
     const { items, activeLink: { id } } = this.state;
   
     return items.map(({ name, active }, index) => {
-      return <MenuItem
+      return <NavigateItem
         key={ name }
         index={ index }
         active={ (id === index) }
@@ -113,9 +112,6 @@ class MenuList extends Component {
 }
 
 
-MenuList.propTypes = {
-  // text: PropTypes.string.isRequired,
-};
 
 
-export default MenuList;
+export default NavigateList;

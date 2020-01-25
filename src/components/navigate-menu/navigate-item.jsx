@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-function MenuItem({ text, active, index, handleClick, handleMouseOver }) {
+function NavigateItem({ text, active, index, handleClick, handleMouseOver }) {
   return <li
     className={ `main-menu__item ${
       active ? "main-menu__item--active" : ""
@@ -15,7 +15,7 @@ function MenuItem({ text, active, index, handleClick, handleMouseOver }) {
 }
 
 
-MenuItem.propTypes = {
+NavigateItem.propTypes = {
   text: PropTypes.string.isRequired,
   active: PropTypes.bool.isRequired,
   index: PropTypes.number.isRequired,
@@ -24,4 +24,4 @@ MenuItem.propTypes = {
 };
 
 
-export default React.memo(MenuItem);
+export default React.memo(NavigateItem);
