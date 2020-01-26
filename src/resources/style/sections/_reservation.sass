@@ -1,0 +1,92 @@
+.reserve
+  padding: 100px 0
+  background: linear-gradient(to left, rgba(2,0,36,.1), rgba(255,255,255,0)), url("../../images/pattern-about.jpg") repeat
+  
+  &__wrap
+    display: flex
+    justify-content: space-between
+    
+  &__preview
+    display: flex
+    justify-content: space-between
+    max-width: 570px
+    width: 100%
+    
+  &__picture-wrap
+    display: inline-block
+    position: relative
+    width: 270px
+    height: 507px
+    overflow: hidden
+    
+  &__picture
+    display: inline-block
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    max-width: 100%
+    max-height: 100%
+    
+  &__descr
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 430px
+    
+  &__title
+    margin: 5px 0 23px
+    font-family: $yeseva-font
+    font-size: 36px
+    font-weight: 400
+    line-height: 24px
+    color: $brownDark
+    
+  &__about
+    margin: 18px 0
+    
+  &__text
+    margin: 9px 0
+    font-size: 16px
+    font-weight: 400
+    line-height: 24px
+    text-align: center
+    color: $blackLight
+    
+  &__form
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    
+  &__group
+    display: inline-block
+    width: 200px
+    margin: 8px 0
+    
+  &__label
+    font-size: 14px
+    font-weight: 700
+    color: $brownMiddle
+    
+  &__input,
+  &__select
+    width: 183px
+    height: 35px
+    padding-left: 15px
+    border: 1px solid $brownDark
+    font-size: 16px
+    font-style: italic
+    color: $greyDark
+    background: $white
+    
+  &__select
+    width: 200px
+    
+  &__button
+    padding: 8px 62px
+    margin: 25px auto 0
+    border: 1px solid $brownMiddle
+    font-size: 16px
+    font-weight: 400
+    background-color: $brownMiddle
+    color: $white

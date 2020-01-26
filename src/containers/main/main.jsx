@@ -6,6 +6,7 @@ import { About } from "../about";
 import { Ingredients } from "../ingredients";
 import { Menu } from "../menu";
 import { Review } from "../review";
+import { Reservation } from "../reservation";
 
 
 class Main extends Component {
@@ -39,6 +40,8 @@ class Main extends Component {
         <Menu />
   
         <Review />
+  
+        <Reservation />
 
       </React.Fragment>
     );
