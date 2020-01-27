@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Element, Link } from 'react-scroll';
 import { Svg } from "../../components/static";
 import { NavigateMenu } from "../../components/navigate-menu";
 import { Present } from "../present";
@@ -30,19 +31,32 @@ class Main extends Component {
         <header className="head">
           <NavigateMenu />
           {/*  main-menu */}
-          <Present />
+          
+          <Element name="home">
+            <Present />
+          </Element>
         {/* present */}
         </header>
-        
-        <About />
   
-        <Ingredients />
+        <Element name="about">
+          <About />
+        </Element>
   
-        <Menu />
+        <Element name="igredients">
+          <Ingredients />
+        </Element>
   
-        <Review />
+        <Element name="menu">
+          <Menu />
+        </Element>
   
-        <Reservation />
+        <Element name="reviews">
+          <Review />
+        </Element>
+  
+        <Element name="reservations">
+          <Reservation />
+        </Element>
   
         <Footer />
 

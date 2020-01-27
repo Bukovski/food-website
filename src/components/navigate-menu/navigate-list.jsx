@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { scroller, scrollSpy } from 'react-scroll';
 import NavigateItem from "./navigate-item";
 import { bigFirstLetter } from "../../helpers";
 
@@ -8,15 +9,9 @@ class NavigateList extends Component {
     super();
     
     this.state = {
-      items: [
-        { name: "home", active: true },
-        { name: "about", active: false },
-        { name: "igredients", active: false },
-        { name: "menu", active: false },
-        { name: "reviews", active: false },
-        { name: "reservations", active: false }
-      ],
-      activeLink: { id: 1, width: 0, left: 0 }
+      items: [ "home", "about", "igredients", "menu", "reviews", "reservations" ],
+      linksCoord: [],
+      activeLink: { id: 0, width: 0, left: 0 }
     };
     
     this._line = React.createRef();
@@ -33,19 +28,31 @@ class NavigateList extends Component {
   
   
   handleLoadData = () => {
-    const { offsetLeft, offsetWidth } = document.getElementsByClassName("main-menu__item--active")[ 0 ];
-    const { id } = this.state.activeLink;
-  
-    this.setState({
-      activeLink: {
-        id,
-        width: offsetWidth,
-        left: offsetLeft
+    const item = document.getElementsByClassName("main-menu__item");
+    
+    if (item.length) {
+      let countList = 0;
+      const listLength = item.length;
+        
+      const listCoordinates = [];
+        
+      while (countList < listLength) {
+        const { offsetLeft, offsetWidth } = item[countList];
+        
+        listCoordinates.push({ width: offsetWidth, left: offsetLeft });
+        
+        countList++
       }
-    });
+      
+      this.setState({
+        linksCoord: listCoordinates
+      });
+    }
   };
   
   handleClick = (index) => (event) => {
+    event.preventDefault();
+    
     const { offsetLeft, offsetWidth } = event.target;
     
     this.setState({
@@ -76,24 +83,43 @@ class NavigateList extends Component {
     current.style.left = left + 'px';
   };
   
+  
+  handleGetName = (nameSection) => {
+    const { items, linksCoord } = this.state;
+    
+    const currentIndex = items.indexOf(nameSection) || 0;
+    console.log(currentIndex, linksCoord)
+    const { width, left } = linksCoord[ currentIndex ];
+    
+    this.setState({
+      activeLink: {
+        id: currentIndex,
+        width: width,
+        left: left
+      }
+    })
+  };
+  
   _menuList() {
     const { items, activeLink: { id } } = this.state;
   
-    return items.map(({ name, active }, index) => {
+    return items.map((name, index) => {
       return <NavigateItem
         key={ name }
         index={ index }
+        name={ name }
         active={ (id === index) }
         text={ bigFirstLetter(name) }
         handleClick={ this.handleClick }
         handleMouseOver={ this.handleMouseOver }
+        handleGetName={ this.handleGetName }
       />
     })
   }
   
   render() {
     const { left, width } = this.state.activeLink;
-  
+
     return(
       <ul
         className="main-menu__list"

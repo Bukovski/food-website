@@ -26,7 +26,7 @@ class NavigateMenu extends PureComponent {
   handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
     const visible = this.prevScrollPos > currentScrollPos;
-  
+    
     this.prevScrollPos = currentScrollPos;
     
     this.setState({
@@ -34,11 +34,24 @@ class NavigateMenu extends PureComponent {
     });
   };
   
+  handleMouseEnter = () => {
+    const { visible } = this.state;
+    
+    if (!visible) {
+      this.setState({
+        visible: true
+      });
+    }
+  };
+  
   render() {
     const { visible } = this.state;
     
     return(
-      <div className={ "main-menu " + ((!visible) ? "main-menu--hidden" : "") }>
+      <div
+        className={ "main-menu " + ((!visible) ? "main-menu--hidden" : "") }
+        onMouseEnter={ this.handleMouseEnter }
+      >
         <div className="container">
           <div className="main-menu__wrap">
             <a className="main-menu__logo-link" href="#">

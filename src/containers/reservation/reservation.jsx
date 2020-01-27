@@ -47,7 +47,7 @@ export default function Reservation() {
               <div className="reserve__group">
                 <label className="reserve__label" htmlFor="party">Party number</label>
                 <select className="reserve__select" id="party" name="party">
-                  <option defaultValue>party number</option>
+                  <option>party number</option>
                   <option value={ 1 }>1</option>
                   <option value={ 2 }>2</option>
                 </select>
