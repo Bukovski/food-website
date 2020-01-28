@@ -1,5 +1,6 @@
 import React from "react";
 import { DividerBg } from "../../components/static";
+import { BigWhite } from "../../components/buttons";
 
 
 function Present(props) {
@@ -11,17 +12,13 @@ function Present(props) {
           <DividerBg />
           {/* present__divider */}
           <div className="present__button-wrap">
-            {/*<a className="present__button present__button--active">*/}
-            <a className="present__button">
-                    <span className="present__button-text">
-                      BOOK A TABLE
-                    </span>
-            </a>
-            <a className="present__button">
-                    <span className="present__button-text">
-                      SEE THE MENU
-                    </span>
-            </a>
+            <BigWhite to="reservations">
+              BOOK A TABLE
+            </BigWhite>
+            
+            <BigWhite to="menu">
+              SEE THE MENU
+            </BigWhite>
           </div>
           {/* present__button-wrap */}
         </div>

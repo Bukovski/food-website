@@ -18,8 +18,9 @@ class NavigateList extends Component {
   
   componentDidMount() {
     // only when all page loaded I take style parameters
-    window.addEventListener('load', this.handleLoadData)
-    window.addEventListener('resize', this.handleLoadData)
+    window.addEventListener('load', this.handleLoadData);
+    // if window changed size, update coordinate menu links
+    window.addEventListener('resize', this.handleLoadData);
   }
   
   componentWillUnmount() {
