@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Element, Link } from 'react-scroll';
+import { Element } from 'react-scroll';
 import { Svg } from "../../components/static";
 import { NavigateMenu } from "../../components/navigate-menu";
 import { Present } from "../present";

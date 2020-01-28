@@ -16,7 +16,7 @@ function NavigateItem({ text, name, index, handleClick, handleMouseOver, handleG
       spy={ true }
       smooth={ true }
       duration={ 800 }
-      offset={ 10 }
+      offset={ 0 }
       onSetActive={ handleGetName }
     >
       { text }
@@ -28,10 +28,10 @@ function NavigateItem({ text, name, index, handleClick, handleMouseOver, handleG
 NavigateItem.propTypes = {
   text: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  active: PropTypes.bool.isRequired,
   index: PropTypes.number.isRequired,
   handleClick: PropTypes.func.isRequired,
-  handleMouseOver: PropTypes.func.isRequired
+  handleMouseOver: PropTypes.func.isRequired,
+  handleGetName: PropTypes.func.isRequired
 };
 
 

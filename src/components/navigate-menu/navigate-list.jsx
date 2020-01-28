@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { scroller, scrollSpy } from 'react-scroll';
 import NavigateItem from "./navigate-item";
 import { bigFirstLetter } from "../../helpers";
 
@@ -43,10 +42,22 @@ class NavigateList extends Component {
         
         countList++
       }
-      
-      this.setState({
-        linksCoord: listCoordinates
-      });
+  
+      const { activeLink: { id, width } } = this.state;
+  
+      // coordinates of menu not loaded. Update coordinates active link
+      if (width !== 0) {
+        const newData = listCoordinates[ id ];
+        
+        this.setState({
+          linksCoord: listCoordinates,
+          activeLink: { id: id, width: newData.width, left: newData.left }
+        });
+      } else {
+        this.setState({
+          linksCoord: listCoordinates
+        });
+      }
     }
   };
   
@@ -88,16 +99,27 @@ class NavigateList extends Component {
     const { items, linksCoord } = this.state;
     
     const currentIndex = items.indexOf(nameSection) || 0;
-    console.log(currentIndex, linksCoord)
-    const { width, left } = linksCoord[ currentIndex ];
-    
-    this.setState({
-      activeLink: {
-        id: currentIndex,
-        width: width,
-        left: left
-      }
-    })
+
+    // coordinates of menu loaded
+    if (linksCoord.length) {
+      const { width, left } = linksCoord[ currentIndex ];
+  
+      this.setState({
+        activeLink: {
+          id: currentIndex,
+          width: width,
+          left: left
+        }
+      })
+    } else {
+      this.setState({
+        activeLink: {
+          id: currentIndex,
+          width: 1,
+          left: 1
+        }
+      })
+    }
   };
   
   _menuList() {
