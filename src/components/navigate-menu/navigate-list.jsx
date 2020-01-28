@@ -19,10 +19,12 @@ class NavigateList extends Component {
   componentDidMount() {
     // only when all page loaded I take style parameters
     window.addEventListener('load', this.handleLoadData)
+    window.addEventListener('resize', this.handleLoadData)
   }
   
   componentWillUnmount() {
     window.removeEventListener("load", this.handleLoadData);
+    window.removeEventListener("resize", this.handleLoadData);
   }
   
   
