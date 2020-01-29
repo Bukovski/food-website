@@ -1,6 +1,6 @@
-import BigWhite from "./big-white";
+import ScrollWhiteButton from "./scroll-white-button";
 
 
 export {
-  BigWhite
+  ScrollWhiteButton
 }

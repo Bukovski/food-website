@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import { Link } from "react-scroll";
 
 
-function BigWhite({ to, children }) {
+function ScrollWhiteButton({ to, children }) {
   return (
     <Link
-      className="big-white__button"
-      activeClass="big-white__button--active"
+      className="scroll-white__button"
+      activeClass="scroll-white__button--active"
       to={ to }
       spy={ true }
       smooth={ true }
       duration={ 800 }
       offset={ 0 }
     >
-       <span className="big-white__button-text">
+       <span className="scroll-white__button-text">
          { children }
        </span>
     </Link>
@@ -22,10 +22,10 @@ function BigWhite({ to, children }) {
 }
 
 
-BigWhite.propTypes = {
+ScrollWhiteButton.propTypes = {
   to: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired
 };
 
 
-export default BigWhite;
+export default ScrollWhiteButton;

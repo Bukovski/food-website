@@ -2,6 +2,7 @@ import React from "react";
 import Food1 from "../../resources/images/food/food-1.jpg"
 import Food2 from "../../resources/images/food/food-2.jpg"
 import { DividerBrown } from "../../components/static";
+import { Form } from "../../components/form";
 
 export default function Reservation() {
   return (
@@ -28,33 +29,9 @@ export default function Reservation() {
               </p>
             </div>
             {/* reserve__about */}
-            <form className="reserve__form">
-              <div className="reserve__group">
-                <label className="reserve__label" htmlFor="name">Name</label>
-                <input className="reserve__input" id="name" type="text"  name="name" value="" placeholder="your name *" required />
-              </div>
-              
-              <div className="reserve__group">
-                <label className="reserve__label" htmlFor="email">Email</label>
-                <input className="reserve__input" id="email" type="email"  name="email" value="" placeholder="your email *" required />
-              </div>
-              
-              <div className="reserve__group">
-                <label className="reserve__label" htmlFor="date">Date</label>
-                <input className="reserve__input" id="date" type="date"  name="date" value="" required />
-              </div>
-              
-              <div className="reserve__group">
-                <label className="reserve__label" htmlFor="party">Party number</label>
-                <select className="reserve__select" id="party" name="party">
-                  <option>party number</option>
-                  <option value={ 1 }>1</option>
-                  <option value={ 2 }>2</option>
-                </select>
-              </div>
             
-              <button className="reserve__button">Book now!</button>
-            </form>
+            <Form />
+            
           </div>
           {/* reserve__descr */}
         </div>

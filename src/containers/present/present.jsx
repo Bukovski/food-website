@@ -1,6 +1,6 @@
 import React from "react";
 import { DividerBg } from "../../components/static";
-import { BigWhite } from "../../components/buttons";
+import { ScrollWhiteButton } from "../../components/buttons";
 
 
 function Present(props) {
@@ -12,13 +12,13 @@ function Present(props) {
           <DividerBg />
           {/* present__divider */}
           <div className="present__button-wrap">
-            <BigWhite to="reservations">
+            <ScrollWhiteButton to="reservations">
               BOOK A TABLE
-            </BigWhite>
+            </ScrollWhiteButton>
             
-            <BigWhite to="menu">
+            <ScrollWhiteButton to="menu">
               SEE THE MENU
-            </BigWhite>
+            </ScrollWhiteButton>
           </div>
           {/* present__button-wrap */}
         </div>
