@@ -127,12 +127,16 @@ class Form extends Component {
   };
   
   cleanForm = () => {
+    this.validator.valid();
+    
+    this.submitted = false;
+    
     this.setState({
       name: "",
       email: "",
       date: "",
       party: "",
-      validation: ""
+      validation: this.validator.valid()
     });
   };
   
