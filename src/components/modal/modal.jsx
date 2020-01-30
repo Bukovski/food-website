@@ -13,14 +13,17 @@ class Modal extends Component {
       <React.Fragment>
         <div
           className="modal__overlay"
-          style={{ opacity: show ? ".5" : "0", display: show ? "inline-block" : "none" }}
+          style={{
+            opacity: show ? ".5" : "0",
+            visibility: show ? "visible" : "hidden"
+          }}
           onClick={ handleClose }
         />
         <div
           className="modal"
           style={{
             opacity: show ? "1" : "0",
-            overflowY: show ? "auto" : "0"
+            visibility: show ? "visible" : "hidden"
           }}
         >
           <span className="modal__close" onClick={ handleClose }>

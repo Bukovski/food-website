@@ -12,5 +12,7 @@ https://github.com/fisshy/react-scroll
 Validator
 https://github.com/validatorjs/validator.js
 
-![restaurant template](./snapshoot.jpg)
+![restaurant template](./snapshots/all-template.jpg)
+![custom validation form](./snapshots/custom-validation-form.jpg)
+![show window with order info](./snapshots/show-window-with-order-info.jpg)
 

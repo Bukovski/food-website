@@ -1,18 +1,16 @@
 .modal
+  display: inline-block
+  padding: 23px 18px
+  width: 425px
   position: fixed
   left: 50%
   top: 50%
-  
-  //display: none
-  display: inline-block
-  margin: auto
   transform: translate(-50%,-50%)
-  
-  width: 425px
-  //height: 480px
-  padding: 23px 18px
+  margin: auto
+  opacity: 0
+  visibility: hidden
   background-color: $white
-  transition: .25s all linear
+  transition: all .5s linear
   z-index: 101
   
   &__overlay
@@ -24,7 +22,9 @@
     background: $blackLight
     //opacity: .5
     opacity: 0
-    transition: .5s all linear
+    //visibility: visible
+    visibility: hidden
+    transition: all .5s linear
     z-index: 100
   
   &__dialog

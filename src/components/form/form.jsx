@@ -113,22 +113,17 @@ class Form extends Component {
       // AJAX or Modal window should be here
       console.log(`${ this.state.name } Welcome!`);
       
-      this.handleToggleModal();
-      this.cleanForm();
+      this.handleOpenModal();
     }
   };
   
-  handleToggleModal = () => {
-    const { showModal } = this.state;
-    
+  handleOpenModal = () => {
     this.setState({
-      showModal: !showModal
+      showModal: true
     })
   };
   
   cleanForm = () => {
-    this.validator.valid();
-    
     this.submitted = false;
     
     this.setState({
@@ -136,7 +131,8 @@ class Form extends Component {
       email: "",
       date: "",
       party: "",
-      validation: this.validator.valid()
+      validation: this.validator.valid(),
+      showModal: false
     });
   };
   
@@ -155,17 +151,18 @@ class Form extends Component {
       ? this.validator.validate(this.state)
       : this.state.validation;
     
-    const modalWindow = (<Modal show={ showModal } handleClose={ this.handleToggleModal }>
+    const modalWindow = (<Modal show={ showModal } handleClose={ this.cleanForm }>
       <div className="modal__content">
         <h2 className="modal__title">Your order is being processed</h2>
         <p className="modal__text">Dear { name }, we will contact you soon.</p>
+        <p className="modal__text">Your date: { date } and party number: { party }.</p>
         <p className="modal__text">Thanks for your order</p>
       </div>
     </Modal>);
     
     return(
       <React.Fragment>
-        { showModal ? modalWindow : "" }
+        {  modalWindow }
         <form className="reserve__form" onSubmit={ this.handleSubmit }>
           <div className="reserve__group">
             <label className="reserve__label" htmlFor="name">Name</label>
