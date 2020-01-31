@@ -1,4 +1,5 @@
 import React from "react";
+import Fade from 'react-reveal/Fade';
 import Food1 from "../../resources/images/food/food-1.jpg"
 import Food2 from "../../resources/images/food/food-2.jpg"
 import { DividerBrown } from "../../components/static";
@@ -10,14 +11,16 @@ export default function Reservation() {
       <div className="container">
         <div className="reserve__wrap">
           
-          <div className="reserve__preview">
-            <div className="reserve__picture-wrap">
-              <img className="reserve__picture" src={ Food1 } alt="porridge" />
+          <Fade left>
+            <div className="reserve__preview">
+              <div className="reserve__picture-wrap">
+                <img className="reserve__picture" src={ Food1 } alt="porridge" />
+              </div>
+              <div className="reserve__picture-wrap">
+                <img className="reserve__picture" src={ Food2 } alt="cherry" />
+              </div>
             </div>
-            <div className="reserve__picture-wrap">
-              <img className="reserve__picture" src={ Food2 } alt="cherry" />
-            </div>
-          </div>
+          </Fade>
           {/* reserve__preview */}
           <div className="reserve__descr">
             <h2 className="reserve__title">Just the right food</h2>
@@ -31,7 +34,7 @@ export default function Reservation() {
             {/* reserve__about */}
             
             <Form />
-            
+          
           </div>
           {/* reserve__descr */}
         </div>

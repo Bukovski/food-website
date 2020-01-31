@@ -1,4 +1,5 @@
 import React from "react";
+import Slide from 'react-reveal/Slide';
 import Dish from "../../resources/images/dish.png"
 import Cook from "../../resources/images/cook.png"
 import { DividerBrown } from "../../components/static";
@@ -18,9 +19,11 @@ export default function About() {
             </div>
           </div>
           {/* /.about__description */}
-          <div className="about__pictures-wrap">
-            <img className="about__pictures" src={ Dish } alt="dish plate"/>
-          </div>
+          <Slide right>
+            <div className="about__pictures-wrap">
+              <img className="about__pictures" src={ Dish } alt="dish plate"/>
+            </div>
+          </Slide>
           {/* /.about__pictures */}
         </div>
       </div>
