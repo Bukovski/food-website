@@ -1,23 +1,21 @@
-## Food website
+## React project "Food website"
 
-Sass
-npm install sass-loader node-sass --save-dev
-for windows: npm install --unsafe-perm -g node-sass
 
-prop-types
-https://github.com/facebook/prop-types
+- I use Sass for layout
+> npm install sass-loader node-sass --save-dev
+>
+> for windows: npm install --unsafe-perm -g node-sass
 
-react-scroll
-https://github.com/fisshy/react-scroll
+- For props descriptions i use [prop-types](https://github.com/facebook/prop-types)
 
-Validator
-https://github.com/validatorjs/validator.js
+- For scroll the page when clicking on a menu item [react-scroll](https://github.com/fisshy/react-scroll)
 
-Animation
-https://www.react-reveal.com/
+- My input form uses a library to validate [validator.js](https://github.com/validatorjs/validator.js) 
 
-Preloader
-https://github.com/VamOSGS/react-preloaders
+- Animation of the appearance of blocks when scrolling a page [react-reveal](https://www.react-reveal.com/) 
+
+- I was too lazy to make my preloader because I took ready [react-preloaders](https://github.com/VamOSGS/react-preloaders) 
+
 
 ![restaurant template](./snapshots/all-template.jpg)
 ![custom validation form](./snapshots/custom-validation-form.jpg)
