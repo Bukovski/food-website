@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { dataPeriod, FormValidator } from "../../helpers";
 import { Modal } from "../modal";
 
@@ -89,7 +88,7 @@ class Form extends Component {
   };
   
   _selectValidate = (confirmation, state) => {
-    return !!state.selectOptions.filter(option => option == state.party).length
+    return !!state.selectOptions.filter(option => option.toString() === state.party.toString()).length
   };
   
   
@@ -144,7 +143,6 @@ class Form extends Component {
   
   
   render() {
-    // const { notes } = this.props;
     const { name, email, date, party, showModal } = this.state;
     const { currentDate, nextMonth } = this.datePeriod;
     let validation = this.submitted
@@ -218,7 +216,6 @@ class Form extends Component {
             >
               <option
                 disabled={ true }
-                selected={ true }
                 value=""
               >
                 party number
@@ -236,9 +233,6 @@ class Form extends Component {
 }
 
 
-Form.propTypes = {
-  //notes: PropTypes.string
-};
 
 
 export default Form;

@@ -58,17 +58,17 @@ export default function Footer() {
             </ul>
             {/* footer__list */}
             <div className="footer__social">
-              <a className="footer__button" href="#">
+              <a className="footer__button" href="/#">
                 <svg className="footer__icon">
                   <use href="#twitter" />
                 </svg>
               </a>
-              <a className="footer__button" href="#">
+              <a className="footer__button" href="/#">
                 <svg className="footer__icon">
                   <use href="#youtube-logo" />
                 </svg>
               </a>
-              <a className="footer__button" href="#">
+              <a className="footer__button" href="/#">
                 <svg className="footer__icon">
                   <use href="#facebook" />
                 </svg>

@@ -54,24 +54,24 @@ class NavigateMenu extends PureComponent {
       >
         <div className="container">
           <div className="main-menu__wrap">
-            <a className="main-menu__logo-link" href="#">
+            <a className="main-menu__logo-link" href="/#">
               <img className="main-menu__logo-img" src={ Logo } alt="lambda wordpress logo"/>
             </a>
             {/* main-menu__logo-img */}
             <nav className="main-menu__menu">
               <NavigateList />
               
-              <a className="main-menu__button" href="#">
+              <a className="main-menu__button" href="/#">
                 <svg className="main-menu__icon">
                   <use href="#twitter" />
                 </svg>
               </a>
-              <a className="main-menu__button" href="#">
+              <a className="main-menu__button" href="/#">
                 <svg className="main-menu__icon">
                   <use href="#youtube-logo" />
                 </svg>
               </a>
-              <a className="main-menu__button" href="#">
+              <a className="main-menu__button" href="/#">
                 <svg className="main-menu__icon">
                   <use href="#facebook" />
                 </svg>

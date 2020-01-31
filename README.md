@@ -2,11 +2,12 @@
 
 Sass
 npm install sass-loader node-sass --save-dev
+for windows: npm install --unsafe-perm -g node-sass
 
 prop-types
 https://github.com/facebook/prop-types
 
-npm i -S react-scroll
+react-scroll
 https://github.com/fisshy/react-scroll
 
 Validator

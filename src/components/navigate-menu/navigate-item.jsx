@@ -35,5 +35,4 @@ NavigateItem.propTypes = {
 };
 
 
-// export default React.memo(NavigateItem);
 export default React.memo(NavigateItem);
