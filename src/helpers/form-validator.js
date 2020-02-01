@@ -16,9 +16,9 @@ class FormValidator {
         const field_value = state[rule.field].toString();
         const args = rule.args || [];
         const validation_method = 
-              typeof rule.method === 'string' ?
-              validator[rule.method] : 
-              rule.method;
+              typeof rule.method === 'string'
+                ? validator[rule.method]
+                : rule.method;
         
         if (validation_method(field_value, ...args, state) !== rule.validWhen) {
           validation[rule.field] = { isInvalid: true, message: rule.message };

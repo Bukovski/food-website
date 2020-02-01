@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { dataPeriod, FormValidator } from "../../helpers";
+import PropTypes from "prop-types";
+import { dataPeriod } from "../../helpers";
 import { Modal } from "../modal";
+import withValidator from "./with-validator";
 
 
 
@@ -8,88 +10,18 @@ class Form extends Component {
   constructor() {
     super();
     
-    this.validator = new FormValidator( () => {
-      const { currentDate, nextMonth } = dataPeriod();
-      
-      return [
-        {
-          field: 'name',
-          method: 'isEmpty',
-          validWhen: false,
-          message: 'Enter full name.'
-        },
-        {
-          field: 'name',
-          method: 'isLength',
-          args: [{ min: 3, max: undefined }],
-          validWhen: true,
-          message: 'Should be longer than 3 letters'
-        },
-        {
-          field: 'name',
-          method: 'isLength',
-          args: [{ min: undefined, max: 20 }],
-          validWhen: true,
-          message: 'Should be shorter than 20 letters'
-        },
-        {
-          field: 'email',
-          method: 'isEmpty',
-          validWhen: false,
-          message: 'Enter your email address.'
-        },
-        {
-          field: 'email',
-          method: 'isEmail',
-          validWhen: true,
-          message: 'Enter valid email address.'
-        },
-        {
-          field: 'date',
-          method: this._dateValidate,
-          validWhen: true,
-          message: `Enter data period between ${ currentDate } & ${ nextMonth }`
-        },
-        {
-          field: 'party',
-          method: this._selectValidate,
-          validWhen: true,
-          message: `Select one of party numbers`
-        },
-      ]
-    });
-    
-    
     this.state = {
       name: "",
       email: "",
       date: "",
       party: "",
       selectOptions: [ 1, 2, 3, 4, 5 ],
-      
-      validation: this.validator.valid(),
-      
       showModal: false
     };
     
     this.submitted = false;
     this.datePeriod = dataPeriod();
   }
-  
-  
-  _dateValidate = (confirmation, state) => {
-    const { currentDate, nextMonth } = this.datePeriod;
-    
-    const _getMilliseconds = (date) => new Date(date).getTime();
-    const dateMsec = _getMilliseconds(state.date);
-    
-    return (dateMsec >= _getMilliseconds(currentDate)
-      && dateMsec <= _getMilliseconds(nextMonth))
-  };
-  
-  _selectValidate = (confirmation, state) => {
-    return !!state.selectOptions.filter(option => option.toString() === state.party.toString()).length
-  };
   
   
   handleChange = (event) => {
@@ -102,9 +34,12 @@ class Form extends Component {
   
   handleSubmit = (event) => {
     event.preventDefault();
+  
+    const { validator, updateValidator } = this.props;
+  
+    const validation = validator.validate(this.state);
+    updateValidator( validation );
     
-    const validation = this.validator.validate(this.state);
-    this.setState({ validation });
     this.submitted = true;
     
     if (validation.isValid) {
@@ -130,7 +65,6 @@ class Form extends Component {
       email: "",
       date: "",
       party: "",
-      validation: this.validator.valid(),
       showModal: false
     });
   };
@@ -143,11 +77,13 @@ class Form extends Component {
   
   
   render() {
+    const { validate, validator } = this.props;
     const { name, email, date, party, showModal } = this.state;
+    
     const { currentDate, nextMonth } = this.datePeriod;
     let validation = this.submitted
-      ? this.validator.validate(this.state)
-      : this.state.validation;
+      ? validator.validate(this.state)
+      : validate;
     
     const modalWindow = (<Modal show={ showModal } handleClose={ this.cleanForm }>
       <div className="modal__content">
@@ -233,6 +169,11 @@ class Form extends Component {
 }
 
 
+Form.propTypes = {
+  validator: PropTypes.object.isRequired,
+  validate: PropTypes.object.isRequired,
+  updateValidator: PropTypes.func.isRequired
+};
 
 
-export default Form;
+export default withValidator(Form);
