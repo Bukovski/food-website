@@ -20,4 +20,5 @@
 ![restaurant template](./snapshots/all-template.jpg)
 ![custom validation form](./snapshots/custom-validation-form.jpg)
 ![show window with order info](./snapshots/show-window-with-order-info.jpg)
+![error-page](./snapshots/error-page.jpg)
 

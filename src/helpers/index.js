@@ -1,5 +1,5 @@
 import FormValidator from "./form-validator";
-
+import ErrorBoundry from "./error-boundry";
 
 const bigFirstLetter = (str) => str[0].toUpperCase() + str.slice(1);
 
@@ -26,5 +26,6 @@ function dataPeriod() {
 export {
   bigFirstLetter,
   dataPeriod,
-  FormValidator
+  FormValidator,
+  ErrorBoundry
 }

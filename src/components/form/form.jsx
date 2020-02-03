@@ -5,7 +5,6 @@ import { Modal } from "../modal";
 import withValidator from "./with-validator";
 
 
-
 class Form extends Component {
   constructor() {
     super();
