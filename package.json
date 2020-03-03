@@ -6,6 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/Bukovski/food-website.git"
   },
+  "homepage": "https://bukovski.github.io/food-website",
   "keywords": [
     "es6",
     "babel",
@@ -31,7 +32,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "NODE_ENV=production npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "sass-loader": "^8.0.2"
