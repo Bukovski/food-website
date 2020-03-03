@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/food-website/static/css/main.6b482c11.chunk.css",
+    "main.js": "/food-website/static/js/main.15fd3bfd.chunk.js",
+    "main.js.map": "/food-website/static/js/main.15fd3bfd.chunk.js.map",
+    "runtime-main.js": "/food-website/static/js/runtime-main.bc6e1a5e.js",
+    "runtime-main.js.map": "/food-website/static/js/runtime-main.bc6e1a5e.js.map",
+    "static/js/2.3b0207f2.chunk.js": "/food-website/static/js/2.3b0207f2.chunk.js",
+    "static/js/2.3b0207f2.chunk.js.map": "/food-website/static/js/2.3b0207f2.chunk.js.map",
+    "index.html": "/food-website/index.html",
+    "precache-manifest.08d264a4bdf7132b8685da02536923cb.js": "/food-website/precache-manifest.08d264a4bdf7132b8685da02536923cb.js",
+    "service-worker.js": "/food-website/service-worker.js",
+    "static/css/main.6b482c11.chunk.css.map": "/food-website/static/css/main.6b482c11.chunk.css.map",
+    "static/js/2.3b0207f2.chunk.js.LICENSE": "/food-website/static/js/2.3b0207f2.chunk.js.LICENSE",
+    "static/media/main.sass": "/food-website/static/media/latoregular.edbfecab.woff",
+    "static/media/cook.png": "/food-website/static/media/cook.f17dc99d.png",
+    "static/media/dish.png": "/food-website/static/media/dish.d9eab4ee.png",
+    "static/media/food-1.jpg": "/food-website/static/media/food-1.5eeeed00.jpg",
+    "static/media/food-2.jpg": "/food-website/static/media/food-2.1692f2f8.jpg",
+    "static/media/ingradients.png": "/food-website/static/media/ingradients.96d7546f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bc6e1a5e.js",
+    "static/js/2.3b0207f2.chunk.js",
+    "static/css/main.6b482c11.chunk.css",
+    "static/js/main.15fd3bfd.chunk.js"
+  ]
+}
